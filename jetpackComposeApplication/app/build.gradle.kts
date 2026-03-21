@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.flowmatrixinnovations.jetpackcomposeapplication"
+    namespace = "com.sanjug.textcustomization"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.flowmatrixinnovations.jetpackcomposeapplication"
+        applicationId = "com.sanjug.textcustomization"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

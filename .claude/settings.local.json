@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo:*)",
+      "Bash(gh auth:*)",
+      "Bash(find /c/sanjug/codingPractice/jetpackcompose/jetpackComposeApplication -type f \\\\\\(-name *.kt -o -name *.xml -o -name *.gradle* -o -name *.kts -o -name *.properties \\\\\\))",
+      "Bash(BASE=\"c:/sanjug/codingPractice/jetpackcompose/jetpackComposeApplication/app/src/main/java\")",
+      "Bash(mkdir -p \"$BASE/com/sanjug/textcustomization/ui/theme\")",
+      "Bash(mv \"$BASE/com/flowmatrixinnovations/jetpackcomposeapplication/ui/theme/\"* \"$BASE/com/sanjug/textcustomization/ui/theme/\")",
+      "Bash(mv \"$BASE/com/flowmatrixinnovations/jetpackcomposeapplication/MainActivity.kt\" \"$BASE/com/sanjug/textcustomization/\")",
+      "Bash(rm -rf \"$BASE/com/flowmatrixinnovations\")",
+      "Bash(BASE=\"c:/sanjug/codingPractice/jetpackcompose/jetpackComposeApplication/app/src/androidTest/java\")",
+      "Bash(mkdir -p \"$BASE/com/sanjug/textcustomization\")",
+      "Bash(mv \"$BASE/com/flowmatrixinnovations/jetpackcomposeapplication/\"* \"$BASE/com/sanjug/textcustomization/\")",
+      "Bash(BASE=\"c:/sanjug/codingPractice/jetpackcompose/jetpackComposeApplication/app/src/test/java\")"
+    ]
+  }
+}

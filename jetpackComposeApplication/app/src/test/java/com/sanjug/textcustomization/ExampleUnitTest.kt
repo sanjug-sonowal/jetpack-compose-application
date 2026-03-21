@@ -1,4 +1,4 @@
-package com.flowmatrixinnovations.jetpackcomposeapplication
+package com.sanjug.textcustomization
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme
+package com.sanjug.textcustomization.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

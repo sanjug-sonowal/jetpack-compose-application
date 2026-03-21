@@ -1,4 +1,4 @@
-package com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme
+package com.sanjug.textcustomization.ui.theme
 
 import android.app.Activity
 import android.os.Build

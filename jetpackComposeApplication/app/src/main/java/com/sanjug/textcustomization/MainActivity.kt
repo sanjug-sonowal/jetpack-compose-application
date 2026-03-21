@@ -1,4 +1,4 @@
-package com.flowmatrixinnovations.jetpackcomposeapplication
+package com.sanjug.textcustomization
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,11 +18,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme.JetpackComposeApplicationTheme
-import com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme.Pink40
-import com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme.Pink80
-import com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme.Purple40
-import com.flowmatrixinnovations.jetpackcomposeapplication.ui.theme.Typography
+import com.sanjug.textcustomization.ui.theme.JetpackComposeApplicationTheme
+import com.sanjug.textcustomization.ui.theme.Pink40
+import com.sanjug.textcustomization.ui.theme.Pink80
+import com.sanjug.textcustomization.ui.theme.Purple40
+import com.sanjug.textcustomization.ui.theme.Typography
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
