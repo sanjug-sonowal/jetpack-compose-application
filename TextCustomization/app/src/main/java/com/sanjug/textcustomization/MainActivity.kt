@@ -12,8 +12,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.sanjug.textcustomization.ui.theme.TextCustomizationTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,6 +55,34 @@ fun CustomText(
 }
 
 @Composable
+fun AnnotedText(){
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        var annotedText = buildAnnotatedString {
+            append("Hello ")
+
+            withStyle(
+                style = SpanStyle(
+                    color = Color.Red,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                ),
+                block = {
+                    append("Android")
+                }
+            )
+            
+        }
+
+        Text(
+            text = annotedText
+        )
+    }
+}
+
+@Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
@@ -63,6 +97,7 @@ fun GreetingPreview() {
         Column() {
             Greeting("Android")
             CustomText("sanjug",Modifier)
+            AnnotedText()
         }
     }
 }
