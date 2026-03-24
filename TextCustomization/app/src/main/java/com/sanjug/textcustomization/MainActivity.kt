@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,10 +38,19 @@ class MainActivity : ComponentActivity() {
                             name = "Android",
                             modifier = Modifier.padding(innerPadding)
                         )
+                        Spacer(
+                            modifier = Modifier.padding(16.dp)
+                        )
                         SelectableText("Sanjug","This is not selectable")
-
+                        Spacer(
+                            modifier = Modifier.padding(16.dp)
+                        )
+                        SuperScript("10","4")
+                        Spacer(
+                            modifier = Modifier.padding(16.dp)
+                        )
+                        SubScriptText("10","4")
                     }
-
                 }
             }
         }
@@ -105,6 +116,65 @@ fun SelectableText(
 }
 
 @Composable
+fun SuperScript(
+    NormalText:String,
+    SuperText:String
+){
+    Column() {
+        Text(
+            text = buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(
+                        fontSize = 24.sp
+                    )
+                ){
+                    append((NormalText))
+                }
+
+                withStyle(
+                    style = SpanStyle(
+                        fontSize = 12.sp,
+                        baselineShift = BaselineShift.Superscript
+                    )
+                ){
+                    append((SuperText))
+                }
+
+            }
+        )
+    }
+}
+
+@Composable
+fun SubScriptText(
+    NormalText: String,
+    SubText: String
+){
+    Column() {
+        Text(
+            text = buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(
+                        fontSize = 24.sp
+                    )
+                ){
+                    append((NormalText))
+                }
+
+                withStyle(
+                    style = SpanStyle(
+                        fontSize = 12.sp,
+                        baselineShift = BaselineShift.Subscript
+                    )
+                ){
+                    append((SubText))
+                }
+            }
+        )
+    }
+}
+
+@Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
@@ -121,6 +191,7 @@ fun GreetingPreview() {
             CustomText("sanjug",Modifier)
             AnnotedText()
             SelectableText("Sanjug","This is not selectable")
+            SuperScript("10","4")
         }
     }
 }
