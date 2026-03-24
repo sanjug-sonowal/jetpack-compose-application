@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.selection.DisableSelection
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -35,7 +36,8 @@ class MainActivity : ComponentActivity() {
                             name = "Android",
                             modifier = Modifier.padding(innerPadding)
                         )
-                        SelectableText("Sanjug")
+                        SelectableText("Sanjug","This is not selectable")
+
                     }
 
                 }
@@ -89,11 +91,15 @@ fun AnnotedText(){
 
 @Composable
 fun SelectableText(
-    text : String
+    text : String,
+    deselectText:String
 ){
     Column() {
         SelectionContainer() {
             Text(text = text)
+            DisableSelection {
+                Text(text = deselectText)
+            }
         }
     }
 }
@@ -114,7 +120,7 @@ fun GreetingPreview() {
             Greeting("Android")
             CustomText("sanjug",Modifier)
             AnnotedText()
-            SelectableText("Sanjug")
+            SelectableText("Sanjug","This is not selectable")
         }
     }
 }
