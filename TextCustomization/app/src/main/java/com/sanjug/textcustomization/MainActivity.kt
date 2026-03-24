@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,10 +30,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             TextCustomizationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Column() {
+                        Greeting(
+                            name = "Android",
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                        SelectableText("Sanjug")
+                    }
+
                 }
             }
         }
@@ -83,6 +88,17 @@ fun AnnotedText(){
 }
 
 @Composable
+fun SelectableText(
+    text : String
+){
+    Column() {
+        SelectionContainer() {
+            Text(text = text)
+        }
+    }
+}
+
+@Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
@@ -98,6 +114,7 @@ fun GreetingPreview() {
             Greeting("Android")
             CustomText("sanjug",Modifier)
             AnnotedText()
+            SelectableText("Sanjug")
         }
     }
 }
