@@ -33,6 +33,10 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.height(16.dp)
                         )
                         TextFieldExample()
+                        Spacer(
+                            modifier = Modifier.height(16.dp)
+                        )
+                        PassWordTextField()
                     }
 
                 }
